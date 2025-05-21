@@ -9,12 +9,18 @@ export const ModalTest = () => {
     setShowModalPopup(!showModalPopup);
   };
 
+  const onClose = () => {
+    setShowModalPopup(false);
+  };
+
   return (
     <div className="button-wrapper">
       <button onClick={handleToggleModalPopup}>
         Otevřete hlavní stranu...
       </button>
-      {showModalPopup && <Modal body={<div>Customized body</div>} />}
+      {showModalPopup && (
+        <Modal onClose={onClose} body={<div>Customized body</div>} />
+      )}
     </div>
   );
 };
