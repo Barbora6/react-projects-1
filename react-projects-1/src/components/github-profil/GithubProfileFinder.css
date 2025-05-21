@@ -9,23 +9,24 @@
 .input-wrapper {
   display: flex;
   gap: 20px;
+  align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  border-radius: 8px;
 }
 
 .input-wrapper input {
-  padding: 5px;
+  padding: 10px;
   font-size: 16px;
   border: none;
   border: 1px solid lightblue;
 }
 
-.input-wrapper button {
-  padding: 5px 12px;
+.btn {
+  padding: 8px 24px;
   border: none;
-  border-radius: 8px;
-  background-color: #00f4ec;
-  color: #000;
+  background-color: #b9bcbc;
+  color: white;
+  letter-spacing: 2px;
   cursor: pointer;
 }
 
@@ -60,4 +61,10 @@
   gap: 20px;
   font-size: 20px;
   font-weight: bold;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
