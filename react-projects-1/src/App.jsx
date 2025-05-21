@@ -9,6 +9,9 @@ function App() {
         <li>
           <Link to="/custom-tabs">Proklikávací tlačítka se změnou textu</Link>
         </li>
+        <li>
+          <Link to="/modal-navigation">Modal navigation</Link>
+        </li>
       </ol>
     </section>
   );
