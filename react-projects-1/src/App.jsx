@@ -5,11 +5,11 @@ function App() {
   return (
     <>
       <h1>Projekty React:</h1>
-      <ul>
+      <ol>
         <li>
           <Link to="/custom-tabs">Custom tabs</Link>
         </li>
-      </ul>
+      </ol>
     </>
   );
 }
