@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import "./Style.css";
+import "./GithubProfileFinder.css";
+import { User } from "./User";
 
 export const GithubProfileFinder = () => {
   const [userName, setUserName] = useState("Barbora6");
@@ -14,14 +15,19 @@ export const GithubProfileFinder = () => {
     if (data) {
       setUserData(data);
       setLoading(false);
+      setUserName("");
     }
+
+    console.log(data);
   };
 
-  const handleSubmit = () => {};
+  const handleSubmit = () => {
+    fetchGithubUserData();
+  };
 
   useEffect(() => {
     fetchGithubUserData();
-  });
+  }, []);
 
   if (loading) {
     return <h1>Data se načítají. Prosím vyčkejte!</h1>;
@@ -39,6 +45,7 @@ export const GithubProfileFinder = () => {
         />
         <button onClick={handleSubmit}>Search</button>
       </div>
+      {userData !== null ? <User user={userData} /> : null}
     </div>
   );
 };
