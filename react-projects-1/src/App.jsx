@@ -3,14 +3,14 @@ import "./App.css";
 
 function App() {
   return (
-    <>
+    <section className="container">
       <h1>Projekty React:</h1>
       <ol>
         <li>
-          <Link to="/custom-tabs">Custom tabs</Link>
+          <Link to="/custom-tabs">Proklikávací tlačítka se změnou textu</Link>
         </li>
       </ol>
-    </>
+    </section>
   );
 }
 
