@@ -12,6 +12,9 @@ function App() {
         <li>
           <Link to="/modal-navigation">Modal navigation</Link>
         </li>
+        <li>
+          <Link to="/github-profil-finder">Github - vyhledávač profilů</Link>
+        </li>
       </ol>
     </section>
   );

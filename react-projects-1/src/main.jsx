@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.jsx";
 import { TabTest } from "./components/clicking-tabs/TabTest.jsx";
 import { ModalTest } from "./components/modal-navigation/ModalTest.jsx";
+import { GithubProfileFinder } from "./components/github-profil/GithubProfileFinder.jsx";
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
@@ -12,6 +13,10 @@ const router = createBrowserRouter([
   {
     path: "/modal-navigation",
     element: <ModalTest />
+  },
+  {
+    path: "/github-profil-finder",
+    element: <GithubProfileFinder />
   }
 ]);
 
