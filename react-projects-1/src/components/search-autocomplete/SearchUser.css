@@ -1,0 +1,13 @@
+.search-autocomplete-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 220px;
+}
+
+.input-search-users {
+  padding: 15px 95px;
+  border-radius: 6px;
+}
