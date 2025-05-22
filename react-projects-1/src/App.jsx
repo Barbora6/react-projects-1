@@ -15,6 +15,9 @@ function App() {
         <li>
           <Link to="/github-profil-finder">Github - vyhledávač profilů</Link>
         </li>
+        <li>
+          <Link to="/search-users">Vyhledávač uživatelů</Link>
+        </li>
       </ol>
     </section>
   );

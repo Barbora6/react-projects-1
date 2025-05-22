@@ -6,6 +6,7 @@ import App from "./App.jsx";
 import { TabTest } from "./components/clicking-tabs/TabTest.jsx";
 import { ModalTest } from "./components/modal-navigation/ModalTest.jsx";
 import { GithubProfileFinder } from "./components/github-profil/GithubProfileFinder.jsx";
+import { SearchUser } from "./components/search-autocomplete/SearchUser.jsx";
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: "/github-profil-finder",
     element: <GithubProfileFinder />
+  },
+  {
+    path: "/search-users",
+    element: <SearchUser />
   }
 ]);
 
