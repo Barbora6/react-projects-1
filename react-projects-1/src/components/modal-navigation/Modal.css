@@ -1,15 +1,12 @@
-button {
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 250px;
   padding: 10px 25px;
   border: none;
   border-radius: 8px;
   font-size: 24px;
-}
-
-.button-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .modal {
