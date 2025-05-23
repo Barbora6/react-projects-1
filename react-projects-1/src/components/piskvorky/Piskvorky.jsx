@@ -57,11 +57,18 @@ export const Piskvorky = () => {
     setCtverce(vybraneCtverce);
   };
 
+  const handleRestart = () => {
+    setKdoTahne(true);
+    setCtverce(Array(9).fill(""));
+  };
+
   useEffect(() => {
     if (!zjistiViteze(ctverce) && ctverce.every((item) => item !== "")) {
-      setCtverce(`Prohráli jste. Prosím resetujte hru!`);
+      setStatus(`Hra je nerozhodně. Prosím resetujte hru!`);
     } else if (zjistiViteze(ctverce)) {
-      setStatus(`Vítězem je ${zjistiViteze(ctverce)}`);
+      setStatus(`Vítězem je ${zjistiViteze(ctverce)}. Prosím restartujte hru.`);
+    } else {
+      setStatus(`Další hráč je ${kdoTahne ? "X" : "O"}`);
     }
   }, [ctverce, kdoTahne]);
 
@@ -82,6 +89,8 @@ export const Piskvorky = () => {
         <Ctverec value={ctverce[7]} onClick={() => handleClick(7)} />
         <Ctverec value={ctverce[8]} onClick={() => handleClick(8)} />
       </div>
+      <h1>{status}</h1>
+      <button onClick={handleRestart}>Restart hry</button>
     </div>
   );
 };
