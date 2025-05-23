@@ -22,7 +22,8 @@ const router = createBrowserRouter([
   {
     path: "/search-users",
     element: <SearchUser />
-  }
+  },
+  { path: "/piskvorky", element: <Piskovky /> }
 ]);
 
 createRoot(document.getElementById("root")).render(
