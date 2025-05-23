@@ -1,4 +1,4 @@
-import "/Piskvorky.css";
+import "./Piskvorky.css";
 
 // indexy políček v mřížce budou rozloženy
 // 1,2,3

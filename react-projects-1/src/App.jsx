@@ -19,7 +19,7 @@ function App() {
           <Link to="/search-users">Vyhledávač uživatelů</Link>
         </li>
         <li>
-          <Link to="/piskovky">Piškvorky</Link>
+          <Link to="/piskvorky">Piškvorky</Link>
         </li>
       </ol>
     </section>

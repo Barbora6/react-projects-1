@@ -7,6 +7,7 @@ import { TabTest } from "./components/clicking-tabs/TabTest.jsx";
 import { ModalTest } from "./components/modal-navigation/ModalTest.jsx";
 import { GithubProfileFinder } from "./components/github-profil/GithubProfileFinder.jsx";
 import { SearchUser } from "./components/search-autocomplete/SearchUser.jsx";
+import { Piskvorky } from "./components/piskvorky/Piskvorky.jsx";
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
     path: "/search-users",
     element: <SearchUser />
   },
-  { path: "/piskvorky", element: <Piskovky /> }
+  { path: "/piskvorky", element: <Piskvorky /> }
 ]);
 
 createRoot(document.getElementById("root")).render(
