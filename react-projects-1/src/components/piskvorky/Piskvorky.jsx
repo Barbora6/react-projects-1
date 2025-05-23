@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./Piskvorky.css";
 
 // indexy políček v mřížce budou rozloženy
@@ -14,7 +15,15 @@ const Ctverec = ({ value, onClick }) => {
   );
 };
 
+// ctverec - pole s 9 prvky reprezentující mřížku (každý prvek je buď "", "X", nebo "O")
+// kdoTahne -  boolean, kdo je na tahu (true = "X", false = "O")
+
 export const Piskvorky = () => {
+  const [ctverce, setCtverce] = useState(Array(9).fill(""));
+  const [kdoTahne, setKdoTahne] = useState(true);
+
+  console.log(ctverce);
+
   return (
     <div className="tic-tac-toe-container">
       <div className="row">
