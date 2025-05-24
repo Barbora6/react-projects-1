@@ -21,6 +21,9 @@ function App() {
         <li>
           <Link to="/piskvorky">Piškvorky</Link>
         </li>
+        <li>
+          <Link to="/weather">Počasí</Link>
+        </li>
       </ol>
     </section>
   );

@@ -8,6 +8,7 @@ import { ModalTest } from "./components/modal-navigation/ModalTest.jsx";
 import { GithubProfileFinder } from "./components/github-profil/GithubProfileFinder.jsx";
 import { SearchUser } from "./components/search-autocomplete/SearchUser.jsx";
 import { Piskvorky } from "./components/piskvorky/Piskvorky.jsx";
+import { WeatherApp } from "./components/weather-app/WeatherApp.jsx";
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
@@ -24,7 +25,11 @@ const router = createBrowserRouter([
     path: "/search-users",
     element: <SearchUser />
   },
-  { path: "/piskvorky", element: <Piskvorky /> }
+  { path: "/piskvorky", element: <Piskvorky /> },
+  {
+    path: "/weather",
+    element: <WeatherApp />
+  }
 ]);
 
 createRoot(document.getElementById("root")).render(
