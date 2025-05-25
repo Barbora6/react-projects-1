@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Search } from "./Search";
+import "./WeatherApp.css";
 
 export const WeatherApp = () => {
   const [search, setSearch] = useState("");
@@ -45,7 +46,8 @@ export const WeatherApp = () => {
   console.log(weatherData);
 
   return (
-    <div>
+    <div className="weather-container">
+      <h1>Předpověď počasí</h1>
       <Search
         search={search}
         setSearch={setSearch}
@@ -62,6 +64,26 @@ export const WeatherApp = () => {
           </div>
           <div className="date">
             <span>{getCurrentDate()}</span>
+          </div>
+          <p>Teplota:</p>
+          <div>{weatherData?.main?.temp}</div>
+          <p>Předpověď:</p>
+          <p className="description">
+            {weatherData && weatherData.weather && weatherData.weather[0]
+              ? weatherData.weather[0].description
+              : ""}
+          </p>
+          <div className="weather-info">
+            <div>
+              <div>
+                <p className="wind">{weatherData?.wind?.speed}</p>
+                <p>Rychlost větru:</p>
+              </div>
+              <div>
+                <p className="humidity">{weatherData?.main?.humidity}%</p>
+                <p>Vlhkost:</p>
+              </div>
+            </div>
           </div>
         </div>
       )}
