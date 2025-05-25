@@ -29,6 +29,15 @@ export const WeatherApp = () => {
     fetchWeatherData(search);
   };
 
+  const getCurrentDate = () => {
+    return new Date().toLocaleDateString("cz-Cz", {
+      weekday: "long",
+      month: "long",
+      day: "numeric",
+      year: "numeric"
+    });
+  };
+
   useEffect(() => {
     fetchWeatherData("prague");
   }, []);
@@ -50,6 +59,9 @@ export const WeatherApp = () => {
             <h2>
               {weatherData?.name} <span>{weatherData?.sys?.country}</span>
             </h2>
+          </div>
+          <div className="date">
+            <span>{getCurrentDate()}</span>
           </div>
         </div>
       )}
