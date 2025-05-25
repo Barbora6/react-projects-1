@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Search } from "./Search";
 
 export const WeatherApp = () => {
@@ -10,7 +10,7 @@ export const WeatherApp = () => {
     setLoading(true);
     try {
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q={param}&appid=927d9593b1e91050f32ce5347dd25b3b`
+        `https://api.openweathermap.org/data/2.5/weather?q=${param}&appid=927d9593b1e91050f32ce5347dd25b3b`
       );
       const data = await response.json();
       console.log(data, "data");
@@ -29,7 +29,11 @@ export const WeatherApp = () => {
     fetchWeatherData(search);
   };
 
-  console.log(loading);
+  useEffect(() => {
+    fetchWeatherData("prague");
+  }, []);
+
+  console.log(weatherData);
 
   return (
     <div>
@@ -38,7 +42,22 @@ export const WeatherApp = () => {
         setSearch={setSearch}
         handleSearch={handleSearch}
       />
-      Počasí
+      {loading ? (
+        <div>Data se načítají...</div>
+      ) : (
+        <div>
+          <div className="city-name">
+            <h2>
+              {weatherData?.name} <span>{weatherData?.sys?.country}</span>
+            </h2>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
+
+// volitelné řetězení (optional chaining)
+// operátor ?. umožňuje bezpečný přístup k vlastnostem objektu, který nemusí existovat.
+// weatherData?.name znamená, pokud weatherData existuje, vrať jeho vlastnost name a zároveň weatherData.sys existuje vrať country
+// jinak vrať undefined
