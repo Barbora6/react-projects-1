@@ -11,7 +11,7 @@ export const WeatherApp = () => {
     setLoading(true);
     try {
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${param}&appid=927d9593b1e91050f32ce5347dd25b3b`
+        `https://api.openweathermap.org/data/2.5/weather?q=${param}&appid=927d9593b1e91050f32ce5347dd25b3b&lang=cz`
       );
       const data = await response.json();
       console.log(data, "data");
@@ -45,11 +45,12 @@ export const WeatherApp = () => {
     fetchWeatherData("prague");
   }, []);
 
-  console.log(weatherData);
-
   return (
     <div className="weather-container">
       <h1>Předpověď počasí</h1>
+      <div className="date">
+        <span>{getCurrentDate()}</span>
+      </div>
       <Search
         search={search}
         setSearch={setSearch}
@@ -64,9 +65,7 @@ export const WeatherApp = () => {
               {weatherData?.name} <span>{weatherData?.sys?.country}</span>
             </h2>
           </div>
-          <div className="date">
-            <span>{getCurrentDate()}</span>
-          </div>
+
           <p>Teplota:</p>
           <div className="temp">
             {weatherData?.main?.temp
