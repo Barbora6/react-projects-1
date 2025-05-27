@@ -39,6 +39,8 @@ export const WeatherApp = () => {
     });
   };
 
+  const kelvinToCelsius = (k) => (k - 273.15).toFixed(1);
+
   useEffect(() => {
     fetchWeatherData("prague");
   }, []);
@@ -54,7 +56,7 @@ export const WeatherApp = () => {
         handleSearch={handleSearch}
       />
       {loading ? (
-        <div>Data se načítají...</div>
+        <div className="loading">Data se načítají...</div>
       ) : (
         <div>
           <div className="city-name">
@@ -66,7 +68,11 @@ export const WeatherApp = () => {
             <span>{getCurrentDate()}</span>
           </div>
           <p>Teplota:</p>
-          <div>{weatherData?.main?.temp}</div>
+          <div className="temp">
+            {weatherData?.main?.temp
+              ? `${kelvinToCelsius(weatherData.main.temp)} °C`
+              : ""}
+          </div>
           <p>Předpověď:</p>
           <p className="description">
             {weatherData && weatherData.weather && weatherData.weather[0]
@@ -74,14 +80,16 @@ export const WeatherApp = () => {
               : ""}
           </p>
           <div className="weather-info">
-            <div>
+            <div className="column">
               <div>
-                <p className="wind">{weatherData?.wind?.speed}</p>
-                <p>Rychlost větru:</p>
+                <p className="wind">
+                  Rychlost větru: {weatherData?.wind?.speed}
+                </p>
               </div>
               <div>
-                <p className="humidity">{weatherData?.main?.humidity}%</p>
-                <p>Vlhkost:</p>
+                <p className="humidity">
+                  Vlhost: {weatherData?.main?.humidity}%
+                </p>
               </div>
             </div>
           </div>
@@ -93,5 +101,5 @@ export const WeatherApp = () => {
 
 // volitelné řetězení (optional chaining)
 // operátor ?. umožňuje bezpečný přístup k vlastnostem objektu, který nemusí existovat.
-// weatherData?.name znamená, pokud weatherData existuje, vrať jeho vlastnost name a zároveň weatherData.sys existuje vrať country
+// weatherData?.name znamená, pokud weatherData existuje, vrať jeho vlastnost name a zároveň weatherData.sys
 // jinak vrať undefined

@@ -18,3 +18,46 @@
 .city-name {
   margin-bottom: 10px;
 }
+
+.loading {
+  font-size: 60px;
+  font-weight: bolder;
+  color: #000;
+}
+
+.date {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.temp {
+  font-size: 64px;
+  color: #000;
+  text-align: center;
+}
+
+.description {
+  color: black;
+  font-size: 22px;
+  font-weight: 500;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+.weather-info {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 20px;
+  padding: 0px 20px;
+  font-weight: bold;
+  text-align: center;
+}
+.column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  line-height: 1px;
+}
